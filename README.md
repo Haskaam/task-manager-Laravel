@@ -32,12 +32,12 @@ The application uses two main tables:
 Each task belongs to one user using a foreign key relationship.
 
 ## Security
-Passwords are hashed using Hash::make.
-CSRF protection for forms.
-Dashboard access is restricted to authenticated users.
-Users can edit and delete only their own tasks.
-Input validation using Laravel validation.
-Eloquent ORM prevents SQL injection through parameter binding.
+- Passwords are hashed using Hash::make.
+- CSRF protection for forms.
+- Dashboard access is restricted to authenticated users.
+- Users can edit and delete only their own tasks.
+- Input validation using Laravel validation.
+- Eloquent ORM prevents SQL injection through parameter binding.
 
 ## Installation
 
