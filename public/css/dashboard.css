@@ -1,0 +1,420 @@
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: linear-gradient(
+        135deg,
+        #00E5FF 0%,
+        #007CFF 35%,
+        #7C3AED 70%,
+        #400082 100%
+    );
+
+    color: white;
+}
+
+header {
+    height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 40px;
+
+    background: rgba(10, 10, 30, 0.4);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav {
+    text-align: right;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+    border: 1px solid black;
+
+    background: linear-gradient(
+        135deg,
+        #1c283d 0%,
+        #243B55 100%
+    );
+}
+
+main {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #1c283d 0%,
+        #243B55 100%
+    );
+}
+
+.task_nav {
+    flex: 0 0 15%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.add-btn {
+    background: transparent;
+    border: 1px solid lightgreen;
+    border-radius: 10px;
+    color: lightgreen;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.add-btn:hover {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+.tasks_section {
+    flex: 1;
+    width: 100%;
+    overflow: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.tasks_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tasks_table th,
+.tasks_table td {
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 14px;
+}
+
+.add_task {
+    border: 1px solid black;
+    border-radius: 15px;
+
+    min-height: 250px;
+    width: 50%;
+    margin-top: 7px;
+
+    text-align: center;
+
+    box-shadow: 5px 5px 5px rgb(36, 33, 33);
+}
+
+.add_task #nazwa_input {
+    width: 50%;
+
+    box-sizing: border-box;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: #1E293B;
+
+    color: white;
+
+    outline: none;
+
+    margin: 5px;
+}
+
+.add_task #nazwa_input:focus {
+    border: 1px solid #00E5FF;
+
+    box-shadow: 0 0 10px #00E5FF;
+}
+
+.add_task input::placeholder,
+.add_task textarea::placeholder {
+    color: #94A3B8;
+}
+
+.add_task textarea {
+    width: 50%;
+
+    box-sizing: border-box;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: #1E293B;
+
+    color: white;
+
+    outline: none;
+
+    margin: 5px;
+
+    resize: none;
+}
+
+.add_task textarea:focus {
+    border: 1px solid #00E5FF;
+
+    box-shadow: 0 0 10px #00E5FF;
+}
+
+.add_task button {
+    width: 25%;
+
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    color: white;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        90deg,
+        #22C55E,
+        #16A34A
+    );
+    transition: 0.3s;
+}
+
+.add_task button:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+}
+
+#edit {
+    color: rgb(255, 238, 0);
+    text-decoration: none;
+    background: transparent;
+    border: none;
+}
+
+#edit:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.delete {
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: #EF4444;
+
+    cursor: pointer;
+
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.delete:hover {
+    text-decoration: underline;
+}
+
+.done {
+    opacity: .7;
+}
+
+.done h3 {
+    text-decoration: line-through;
+    color: #22C55E;
+}
+
+#logout-btn {
+    align-self:center;
+    color: rgb(240, 50, 50);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 95%;
+}
+
+#logout-btn:hover {
+    text-decoration: underline;
+}
+
+.logout-form {
+    margin-top: 155%;
+    width: 100%;
+}
+
+.status {
+    color: rgb(8, 150, 206);
+}
+
+.status-btn {
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: white;
+    font: inherit;
+
+    cursor: pointer;
+}
+
+.status-btn:hover {
+    text-decoration: underline;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    width: 420px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(15, 15, 40, 0.95);
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.12);
+
+    background: #1E293B;
+    color: white;
+
+    outline: none;
+    font-family: inherit;
+}
+
+.modal-content textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+    border-color: #00E5FF;
+    box-shadow: 0 0 10px rgba(0,229,255,0.6);
+}
+
+.modal-content button[type="submit"] {
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(90deg, #22C55E, #16A34A);
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-content button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(34,197,94,0.5);
+}
+
+#closeAddModal,
+.closeEditModal {
+    background: transparent;
+    border: none;
+    color: white;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    float: right;
+}
+
+footer {
+    min-height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 40px;
+
+    background: rgba(10, 10, 30, 0.4);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 0 40px;
+}
+
